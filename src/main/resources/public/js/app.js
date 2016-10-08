@@ -1,0 +1,1 @@
+angular.module('zooApp', ['ui.router','ngSanitize']);

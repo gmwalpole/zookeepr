@@ -1,0 +1,21 @@
+<div>
+  <div class="pageTitleWrap">
+    <h2 class="pageTitle">View Food</h2>
+  </div>
+  <br/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+      <div class="col-md-6 col-sm-8 col-xs-10 formwrap">
+        <div class="formLabel">Select Food: </div><select ng-model="selectedId" ng-change="setCurrent();">
+          <option ng-repeat="food in foodList" ng-value="food.foodId">{{food.name}}</option>
+        </select><br/>
+        <hr/>
+        <div class="formLabel">Name: </div><div class="formView">{{currentFood.name}}</div><br/><br/>
+        <div class="formLabel">Category: </div><div class="formView">{{currentCategory}}</div><br/><br/>
+        <div class="formLabel">Vendor: </div><div class="formView">{{currentFood.vendor}}</div><br/><br/>
+      </div>
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+    </div>
+  </div>
+</div>

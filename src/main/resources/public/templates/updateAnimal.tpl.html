@@ -1,0 +1,28 @@
+<div>
+  <div class="pageTitleWrap">
+    <h2 class="pageTitle">Update Animal</h2>
+  </div>
+  <br/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+      <div class="col-md-6 col-sm-8 col-xs-10 formwrap"> 
+        <div class="resultMsg" ng-show="resultMsg.length > 0" ng-bind-html="resultMsg"></div>
+			  <div class="formLabel">Select Animal: </div><select ng-model="selectedId" ng-change="setCurrent();">
+			    <option ng-repeat="animal in animalList" ng-value="animal.animalId">{{animal.commonName}}</option>
+			  </select><br/>
+        <hr/>
+			  <input type="hidden" id="updId" ng-model="currentAnimal.animalId">
+			  <div class="formLabel">Common Name: </div><input type="text" id="updCName" ng-model="currentAnimal.commonName"><br/><br/>
+			  <div class="formLabel">Scientific Name: </div><input type="text" id="updSName" ng-model="currentAnimal.scientificName"><br/><br/>
+			  <div class="formLabel">Favorite Food: </div><select ng-model="currentAnimal.foodId">
+			    <option ng-repeat="food in foodList" ng-value="food.foodId" 
+			     ng-selected="food.foodId==currentAnimal.foodId">{{food.name}}</option>
+			  </select><br/><br/>
+			  <div class="formLabel">Information Link: </div><input type="text" id="updLink" ng-model="currentAnimal.infoLink"><br/><br/>
+			  <center><input type="button" ng-disabled="selectedId==0" value="Update" ng-click="validateForm();"></center>
+      </div>
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+    </div>
+  </div>
+</div>

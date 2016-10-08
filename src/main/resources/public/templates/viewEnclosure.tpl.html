@@ -1,0 +1,23 @@
+<div>
+  <div class="pageTitleWrap">
+    <h2 class="pageTitle">View Enclosure</h2>
+  </div>
+  <br/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+      <div class="col-md-6 col-sm-8 col-xs-10 formwrap">
+        <div class="formLabel">Select Enclosure: </div><select ng-model="selectedId" ng-change="setCurrent();">
+          <option ng-repeat="enclosure in enclosureList" ng-value="enclosure.enclosureId">{{enclosure.name}}</option>
+        </select><br/>
+        <hr/>
+        <div class="formLabel">Name: </div><div class="formView">{{currentEnclosure.name}}</div><br/><br/>
+        <div class="formLabel">Animal: </div><div class="formView">{{currentAnimal}}</div><br/><br/>
+        <div class="formLabel">Animal Quantity: </div><div class="formView">{{currentEnclosure.animalQuantity}}</div><br/><br/>
+        <div class="formLabel">Condition: </div><div class="formView">{{currentCondition}}</div><br/><br/>
+        <div class="formLabel">Feeding Time: </div><div class="formView">{{currentEnclosure.feedingTime}}</div><br/><br/>
+      </div>
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+    </div>
+  </div>
+</div>

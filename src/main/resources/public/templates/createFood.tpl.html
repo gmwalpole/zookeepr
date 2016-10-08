@@ -1,0 +1,21 @@
+<div>
+  <div class="pageTitleWrap">
+    <h2 class="pageTitle">Add Food</h2>
+  </div>
+  <br/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+      <div class="col-md-6 col-sm-8 col-xs-10 formwrap"> 
+        <div class="resultMsg" ng-show="resultMsg.length > 0" ng-bind-html="resultMsg"></div>
+	      <div class="formLabel">Name: </div><input type="text" ng-model="foodName"><br/><br/>
+	 	    <div class="formLabel">Category: </div><select ng-model="categoryId">
+		      <option ng-repeat="category in categoryList" ng-value="category.categoryId">{{category.category}}</option>
+		    </select><br/><br/>
+		    <div class="formLabel">Vendor: </div><input type="text" ng-model="vendor"><br/><br/>
+		    <center><input type="button" ng-click="validateForm();" value="Add Food"></center>
+      </div>
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+    </div>
+  </div>
+</div>

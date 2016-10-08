@@ -1,0 +1,40 @@
+<div>
+  <div class="pageTitleWrap">
+    <h2 class="pageTitle">Update Enclosure</h2>
+  </div>
+  <br/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+      <div class="col-md-6 col-sm-8 col-xs-10 formwrap"> 
+        <div class="resultMsg" ng-show="resultMsg.length > 0" ng-bind-html="resultMsg"></div>
+			  <div class="formLabel">Select Enclosure: </div><select ng-model="selectedId" ng-change="setCurrent();">
+			    <option ng-repeat="enclosure in enclosureList" ng-value="enclosure.enclosureId">{{enclosure.name}}</option>
+			  </select><br/>
+			  <hr/>
+			  <input type="hidden" id="updId" ng-model="currentEnclosure.enclosureId">
+			  <div class="formLabel">Name: </div><input type="text" id="updName" ng-model="currentEnclosure.name"><br/><br/>
+        <div class="formLabel">Animal: </div><select ng-model="currentEnclosure.animalId">
+          <option ng-repeat="animal in animalList" ng-value="animal.animalId" 
+           ng-selected="animal.animalId==currentEnclosure.animalId">{{animal.commonName}}</option>
+        </select><br/><br/>
+			  <div class="formLabel">Animal Quantity: </div><input type="number" id="updQuantity" ng-model="currentEnclosure.animalQuantity" min="0"><br/><br/>
+        <div class="formLabel">Condition: </div><select ng-model="currentEnclosure.conditionId">
+          <option ng-repeat="condition in conditionList" ng-value="condition.conditionId" 
+           ng-selected="condition.conditionId==currentEnclosure.conditionId">{{condition.condition}}</option>
+        </select><br/><br/>
+			  <div class="formLabel">Feeding Time: </div><select ng-model="feedingHour">
+			    <option ng-repeat="hour in allowedHours" ng-value="hour">{{hour}}</option>
+			  </select>:<select ng-model="feedingMinute">
+			    <option ng-repeat="minute in allowedMinutes" ng-value="minute">{{minute}}</option>
+			  </select>
+			  <select ng-model="feedingDayHalf">
+			    <option value="AM">AM</option>
+			    <option value="PM">PM</option>
+			  </select><br/><br/>
+			  <center><input type="button" ng-disabled="selectedId==0" value="Update" ng-click="validateForm();"></center>
+      </div>
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+    </div>
+  </div>
+</div>

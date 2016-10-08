@@ -1,0 +1,27 @@
+<div>
+  <div class="pageTitleWrap">
+    <h2 class="pageTitle">Update Food</h2>
+  </div>
+  <br/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+      <div class="col-md-6 col-sm-8 col-xs-10 formwrap"> 
+        <div class="resultMsg" ng-show="resultMsg.length > 0" ng-bind-html="resultMsg"></div>
+			  <div class="formLabel">Select Food: </div><select ng-model="selectedId" ng-change="setCurrent();">
+			    <option ng-repeat="food in foodList" ng-value="food.foodId">{{food.name}}</option>
+			  </select><br/>
+			  <hr/>
+			  <input type="hidden" id="updId" ng-model="currentFood.foodId">
+			  <div class="formLabel">Name: </div><input type="text" id="updName" ng-model="currentFood.name"><br/><br/>
+			  <div class="formLabel">Category: </div><select ng-model="currentFood.categoryId">
+			    <option ng-repeat="category in categoryList" ng-value="category.categoryId" 
+			     ng-selected="category.categoryId==currentFood.categoryId">{{category.category}}</option>
+			  </select><br/><br/>
+			  <div class="formLabel">Vendor: </div><input type="text" id="updVendor" ng-model="currentFood.vendor"><br/><br/>
+        <center><input type="button" ng-disabled="selectedId==0" value="Update" ng-click="validateForm();"></center>
+      </div>
+      <div class="col-md-3 col-sm-2 col-xs-1">&nbsp;</div>
+    </div>
+  </div>
+</div>
